@@ -1,24 +1,25 @@
-import Link from "/next/link"
+import Link from "next/link"
 
 export default function Navbar({}){
 
-    const [user, username] = {};
+    const user = null;
+    const username = null;
 
     return(
-        <nav>
+        <nav className="navbar">
             <ul>
                 <li>
                     <Link href="/">
-                        <button> FEED </button>
+                        <button className="btn-logo"> FEED </button>
                     </Link>
                 </li>
 
             {/* @User is signed in */}
             { username && (
                <>
-                <li>
+                <li className="push-left">
                     <Link href="/admin">
-                        <button> WRITE POST</button>
+                        <button className="btn-blue"> WRITE POST</button>
                     </Link>
                 </li>
                 <li>
@@ -29,10 +30,10 @@ export default function Navbar({}){
                </>
             )}
 
-            {/* @User is signed in */}
+            {/* @User is signed out */}
             { !username && (
                 <Link href="/enter">
-                    <button> Sign In</button>
+                    <button className="btn-blue"> Sign In</button>
                 </Link>
             )}
 
